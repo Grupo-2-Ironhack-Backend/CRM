@@ -1,6 +1,7 @@
 package dbInteraction;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import customer.*;
 import org.apache.commons.io.FileUtils;
 
@@ -80,7 +81,7 @@ public class Database {
 
 
     public void exportClassToJSON(Object object) {
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String objToJSON = gson.toJson(object);
         System.out.println(objToJSON);
     }
