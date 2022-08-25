@@ -4,7 +4,7 @@ COPY pom.xml .
 RUN mvn -e -B dependency:resolve
 COPY src ./src
 RUN mvn -e -B package
-RUN rm -f target/original*
+RUN rm target/original*
 
 FROM openjdk:19-jdk-alpine3.16
 ARG JAR_FILE=/app/target/*.jar
